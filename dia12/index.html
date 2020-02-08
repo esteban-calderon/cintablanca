@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Home
+                </a>
+
+                <a class="navbar-item">
+                    Documentation
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <button onclick="juego()" class="button is-primary">
+                            <strong>Jugar</strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="columns is-desktop">
+                <div class="column is-6">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="data:image/jpeg;base64,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" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="https://bulma.io/images/placeholders/96x96.png"
+                                            alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">John Smith</p>
+                                    <p class="subtitle is-6">@johnsmith</p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <p>Selecciona una opción</p>
+                                <div class="select">
+                                    <select id="j1">
+                                        <option value="piedra">Piedra</option>
+                                        <option value="papel">Papel</option>
+                                        <option value="tijera">Tijera</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://media.aws.alkosto.com/media/catalog/product/cache/6/image/69ace863370f34bdf190e4e164b6e123/x/b/xboxones_secnslcntlr_prplrush_frnttlt_rgb.jpg" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="https://bulma.io/images/placeholders/96x96.png"
+                                            alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">John Smith</p>
+                                    <p class="subtitle is-6">@johnsmith</p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <p>Selecciona una opción</p>
+                                <div class="select">
+                                    <select id="j2">
+                                        <option value="piedra">Piedra</option>
+                                        <option value="papel">Papel</option>
+                                        <option value="tijera">Tijera</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

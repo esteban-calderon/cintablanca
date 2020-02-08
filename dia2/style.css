@@ -1,0 +1,26 @@
+body {
+    background: gray;
+}
+
+p {
+    color: red;
+}
+.verdes{
+    color: green;
+}
+.azules{
+    color: blue;
+}
+.caja{
+    height: 100px;
+    background: cadetblue;
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 50px;
+}
+.cajita{
+    height: 50px;
+    width: 50px;
+    background: chartreuse;
+    border: 3px dashed blue;
+}
